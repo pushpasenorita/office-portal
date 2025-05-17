@@ -1,5 +1,5 @@
 .header {
-  background-color: #0D9488 ;/* Teal background */
+  background-color: #0D9488; /* Teal background */
   color: white;
   padding: 16px;
   display: flex;
@@ -9,7 +9,7 @@
   position: sticky;
   top: 0;
   z-index: 10;
-  font-family:DM sans;
+  font-family: 'DM Sans', Arial, sans-serif;
 }
 
 .header-left {
@@ -110,3 +110,8 @@
     padding: 6px 12px;
   }
 }
+
+/* 
+@media screen {
+  
+} */

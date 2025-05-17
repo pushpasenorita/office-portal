@@ -1,11 +1,17 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom'; //Import BrowserRouter
 import './index.css';
-import App from './All pages/User-profile/Components1/App';
-import reportWebVitals from './reportWebVitals';
-// import App1 from "./All pages/User-profile/subPages-of-UP/App";
+import App from './App';
 
-const root = createRoot(document.getElementById('root'));
-root.render(<App />);
+const rootElement = document.getElementById('root');
+if (!rootElement) {
+  throw new Error('Root element not found. Ensure there is a <div id="root"> in your index.html.');
+}
+const root = createRoot(rootElement);
 
-reportWebVitals();
+root.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+);

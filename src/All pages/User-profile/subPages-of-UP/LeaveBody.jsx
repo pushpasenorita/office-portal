@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './Body.css';
+import './LeaveBody.css';
 
-const Body = () => {
+const LeaveBody = () => {
   const [formData, setFormData] = useState({
     fromDate: '',
     toDate: '',
@@ -11,7 +11,6 @@ const Body = () => {
   });
 
   const [leaveHistory, setLeaveHistory] = useState([
-    // Sample data for leave history
     {
       from: '2025-05-01',
       to: '2025-05-03',
@@ -35,19 +34,16 @@ const Body = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Add the new leave request to the history (mock submission)
+  const handleSubmit = () => {
     const newLeave = {
       from: formData.fromDate,
       to: formData.toDate,
       type: formData.type,
       reason: formData.reason,
       status: 'Pending',
-      date: new Date().toISOString().split('T')[0], // Current date
+      date: new Date().toISOString().split('T')[0],
     };
     setLeaveHistory([newLeave, ...leaveHistory]);
-    // Reset form
     setFormData({
       fromDate: '',
       toDate: '',
@@ -59,9 +55,8 @@ const Body = () => {
 
   return (
     <div className="leave-container">
-      {/* Apply for Leave Form */}
-      <h2 className="section-title">Apply for Leave</h2>
-      <form onSubmit={handleSubmit} className="leave-form">
+      <h2 className="leavebodysection-title">Apply for Leave</h2>
+      <div className="leave-form">
         <div className="form-group">
           <label htmlFor="fromDate">From Date:</label>
           <input
@@ -96,7 +91,7 @@ const Body = () => {
             <option value="">Select Type</option>
             <option value="Sick Leave">Sick Leave</option>
             <option value="Casual Leave">Casual Leave</option>
-            <option value="Annual Leave">Annual Leave</option>
+            {/* <option value="Annual Leave">Annual Leave</option> */}
           </select>
         </div>
         <div className="form-group">
@@ -110,12 +105,11 @@ const Body = () => {
             required
           />
         </div>
-        <button type="submit" className="submit-btn">
+        <button onClick={handleSubmit} className="submit-btn">
           Submit
         </button>
-      </form>
+      </div>
 
-      {/* Status Section */}
       <div className="status-section">
         <h3>Status:</h3>
         <div className="status-options">
@@ -162,8 +156,7 @@ const Body = () => {
         </div>
       </div>
 
-      {/* Leave History Table */}
-      <h2 className="section-title">Leave History</h2>
+      <h2 className="leavebodysection-title">Leave History</h2>
       <div className="leave-history">
         <table>
           <thead>
@@ -195,12 +188,11 @@ const Body = () => {
         </table>
       </div>
 
-      {/* Pagination Note */}
-      <p className="pagination-note">
+      {/* <p className="pagination-note">
         If there is pagination - [Prev] [1] [2] ...
-      </p>
+      </p> */}
     </div>
   );
 };
 
-export default Body;
+export default LeaveBody;

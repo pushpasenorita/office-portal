@@ -1,4 +1,4 @@
-.leave-request {
+.leave-container {
   max-width: 800px;
   margin: 40px auto;
   padding: 20px;
@@ -8,14 +8,18 @@
   font-family: 'DM Sans', Arial, sans-serif;
 }
 
-.section-title {
-  font-size: 24px;
+.leavebodysection-title{
+   font-size: 24px;
   font-weight: 600;
-  color: #1a4d4d;
+  color: #ffffff; /* Teal color to match header */
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   border-bottom: 2px solid #1a4d4d;
   padding-bottom: 10px;
+  background-color: #0D9488;
+  border-radius: 10px;
+  box-shadow: 0px 1px 2px #0D9488;
+  padding-top:10px;
 }
 
 /* Form Styling */
@@ -66,6 +70,8 @@
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  width: 100px;
+  margin: auto;
 }
 
 .submit-btn:hover {
@@ -109,60 +115,41 @@
   margin-bottom: 10px;
 }
 
-.history-table {
+.leave-history table {
   width: 100%;
-  border-collapse: collapse;
-  background-color: #ffffff;
-  border-radius: 5px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 1px 13px rgba(0, 0, 0, 0.10);
 }
 
-.history-table th,
-.history-table td {
+.leave-history th,
+.leave-history td {
   padding: 10px;
   text-align: left;
   border-bottom: 1px solid #ddd;
 }
 
-.history-table th {
+.leave-history th {
   background-color: #0d9488;
   color: white;
   font-weight: 600;
 }
 
-.history-table tr:hover {
+.leave-history tr:hover {
   background-color: #f1f1f1;
 }
 
 /* Pagination */
-.pagination {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
+.pagination-note {
+  text-align: center;
+  color: #666;
   margin-top: 20px;
-}
-
-.pagination button {
-  padding: 8px 16px;
-  border: 1px solid #ccc;
-  background-color: #ffffff;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.pagination button:disabled {
-  background-color: #f0f0f0;
-  cursor: not-allowed;
-}
-
-.pagination button:hover:not(:disabled) {
-  background-color: #e0e0e0;
 }
 
 /* Responsive Adjustments */
 @media (max-width: 600px) {
-  .leave-request {
+  .leave-container {
     margin: 20px;
     padding: 15px;
   }
@@ -189,8 +176,8 @@
     gap: 10px;
   }
 
-  .history-table th,
-  .history-table td {
+  .leave-history th,
+  .leave-history td {
     font-size: 14px;
     padding: 8px;
   }

@@ -1,11 +1,11 @@
 .user-profile {
   max-width: 600px;
   margin: 20px auto;
-  padding: 20px;
+  padding:20px;
   background-color: #f9f9f9;
   border-radius: 10px;
   box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
-  font-family:DM sans;
+  font-family: 'DM Sans', Arial, sans-serif;
 }
 
 .section-title {
@@ -13,14 +13,13 @@
   font-weight: 600;
   color: #ffffff; /* Teal color to match header */
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   border-bottom: 2px solid #1a4d4d;
   padding-bottom: 10px;
-  padding-top: 10PX;
   background-color: #0D9488;
-  border-radius: 10PX ;
+  border-radius: 10px;
   box-shadow: 0px 1px 2px #0D9488;
-  
+  padding-top:10px;
 }
 
 .profile-details {

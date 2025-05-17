@@ -16,8 +16,23 @@ export const EmployeeProvider = ({ children }) => {
     bloodGroup: 'A+',
   });
 
+  const logout = () => {
+    setEmployee({
+      id: '',
+      gender: '',
+      name: '',
+      role: '',
+      phone: '',
+      email: '',
+      startingDate: '',
+      endingDate: '',
+      healthComplaints: '',
+      bloodGroup: '',
+    });
+  };
+
   return (
-    <EmployeeContext.Provider value={{ employee, setEmployee }}>
+    <EmployeeContext.Provider value={{ employee, setEmployee, logout }}>
       {children}
     </EmployeeContext.Provider>
   );

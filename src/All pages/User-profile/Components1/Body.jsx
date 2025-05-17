@@ -3,7 +3,13 @@ import { EmployeeContext } from './EmployeeContext';
 import './Body.css';
 
 const Body = () => {
-  const { employee } = useContext(EmployeeContext);
+  const context = useContext(EmployeeContext);
+  const employee = context ? context.employee : null;
+
+  if (!context) {
+    console.error('EmployeeContext is not available. Ensure Body is wrapped in EmployeeProvider.');
+    return <div>Error: Context not available</div>;
+  }
 
   const userDetails = {
     name: employee?.name || 'N/A',
